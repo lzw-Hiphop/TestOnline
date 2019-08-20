@@ -22,4 +22,6 @@ public interface UserService {
     public List<User> showlist(int index,int pageSize);
 
     public int countIndex();
+
+    public void upload(String username,String newFileName);
 }

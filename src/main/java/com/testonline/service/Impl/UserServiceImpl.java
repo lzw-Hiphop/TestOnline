@@ -118,4 +118,14 @@ public class UserServiceImpl implements UserService {
     public int countIndex() {
         return usermapper.countIndex();
     }
+
+    //上传头像
+    @Override
+    public void upload(String username,String newFileName){
+        UserExample example = new UserExample();
+        example.createCriteria().andUsernameEqualTo(username);
+        User user = new User();
+        user.setImage(newFileName);
+        usermapper.updateByExampleSelective(user,example);
+    }
 }

@@ -60,6 +60,7 @@ public class UserController {
     public String userInfo(Model model, HttpServletRequest request) {
         List<User> users = userService.select(request);
         User user = users.get(0);
+        model.addAttribute("newFileName",user.getImage());
         model.addAttribute("username", user.getUsername());
         model.addAttribute("realname", user.getRealname());
         return "/user_info";

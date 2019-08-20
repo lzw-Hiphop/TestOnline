@@ -11,6 +11,8 @@ public class User implements Serializable {
 
     private String realname;
 
+    private String image;
+
     private static final long serialVersionUID = 1L;
 
     public Integer getUserid() {
@@ -45,6 +47,14 @@ public class User implements Serializable {
         this.realname = realname == null ? null : realname.trim();
     }
 
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image == null ? null : image.trim();
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -55,6 +65,7 @@ public class User implements Serializable {
         sb.append(", username=").append(username);
         sb.append(", password=").append(password);
         sb.append(", realname=").append(realname);
+        sb.append(", image=").append(image);
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");
         return sb.toString();

@@ -116,11 +116,16 @@
 </nav>
 <div class="container">
     <div class="jumbotron">
-        <h2>用户信息</h2>
+        <h2>用户信息&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="uploadpage?username=${sessionScope.get("username")}" class="btn btn-primary addTestppaper">上传头像</a></h2>
         <hr>
         <div class="user-form">
             <form action="${pageContext.request.contextPath}/userChange?username=${username}" method="post"
                   onSubmit="return submitSave()">
+                <h4><span>头像：</span>
+                    <img alt="" src="img/${newFileName}" height="150" width="150" id="images"
+                         onerror="this.src='img/default.jpg'" class="img-rounded">
+                </h4>
                 <h4><span>用户名：</span>&nbsp;${username}</h4>
                 <input type="hidden" name="username" value="${username}">
                 <h4><span>真实姓名：</span>
